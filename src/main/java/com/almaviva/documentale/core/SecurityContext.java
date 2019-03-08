@@ -1,8 +1,8 @@
-package com.almaviva.documentale.interceptors.core;
+package com.almaviva.documentale.core;
 
 import java.util.List;
 
-import com.almaviva.documentale.engine.Forbidden;
+import com.almaviva.documentale.Forbidden;
 
 public class SecurityContext {
 

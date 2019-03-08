@@ -3,9 +3,9 @@ package com.almaviva.documentale.interceptors.zip;
 import java.io.ByteArrayInputStream;
 import java.util.zip.GZIPInputStream;
 
-import com.almaviva.documentale.engine.InternalServerError;
-import com.almaviva.documentale.interceptors.core.ContentDecoder;
-import com.almaviva.documentale.interceptors.core.WorkingArea;
+import com.almaviva.documentale.InternalServerError;
+import com.almaviva.documentale.core.ContentDecoder;
+import com.almaviva.documentale.core.WorkingArea;
 
 import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.context.annotation.Profile;

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<documentale>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.almaviva.documentale.Main",
+            "projectName": "documentale",
+            "args": ""
+        }
+    ]
+}

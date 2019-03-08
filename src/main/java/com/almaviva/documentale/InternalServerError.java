@@ -1,14 +1,14 @@
-package com.almaviva.documentale.engine;
+package com.almaviva.documentale;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class NotFound extends RuntimeException{
+@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+public class InternalServerError extends RuntimeException {
 
     private static final long serialVersionUID = -8045973875160313111L;
 
-    public NotFound(String message)
+    public InternalServerError(String message)
     {
         super(message);
     }

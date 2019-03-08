@@ -1,7 +1,7 @@
 package com.almaviva.documentale.interceptors.aes;
 
-import com.almaviva.documentale.interceptors.core.ContentDecoder;
-import com.almaviva.documentale.interceptors.core.WorkingArea;
+import com.almaviva.documentale.core.ContentDecoder;
+import com.almaviva.documentale.core.WorkingArea;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;

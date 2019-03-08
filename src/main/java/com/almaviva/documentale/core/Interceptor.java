@@ -1,4 +1,4 @@
-package com.almaviva.documentale.interceptors.core;
+package com.almaviva.documentale.core;
 
 @FunctionalInterface
 public interface Interceptor

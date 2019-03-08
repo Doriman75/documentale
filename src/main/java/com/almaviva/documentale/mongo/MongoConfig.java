@@ -35,8 +35,6 @@ public class MongoConfig
     @Bean @Qualifier("data")
     public MongoCollection<Document> data(MongoClient client)
     {
-        System.out.println("dataDB " + dataDB);
-        System.out.println("dataCollection " + dataCollection);
         return client.getDatabase(dataDB).getCollection(dataCollection);
     }
 

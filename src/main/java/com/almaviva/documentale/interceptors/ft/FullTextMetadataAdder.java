@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import com.almaviva.documentale.engine.InternalServerError;
-import com.almaviva.documentale.interceptors.core.CreateMetadataAdder;
-import com.almaviva.documentale.interceptors.core.WorkingArea;
+import com.almaviva.documentale.InternalServerError;
+import com.almaviva.documentale.core.CreateMetadataAdder;
+import com.almaviva.documentale.core.WorkingArea;
 
 import org.apache.tika.Tika;
 import org.apache.tika.metadata.Metadata;

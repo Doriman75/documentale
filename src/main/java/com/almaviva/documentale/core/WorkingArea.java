@@ -1,6 +1,6 @@
-package com.almaviva.documentale.interceptors.core;
+package com.almaviva.documentale.core;
 
-import java.util.Map;
+import com.almaviva.documentale.Context;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 public class WorkingArea{
     private static final Logger logger = LoggerFactory.getLogger(WorkingArea.class);
  
-    public Map<String, Object> document;
+    public Doc document;
     public byte[] bytes;
-    public Map<String, String> context;
+    public Context context;
     public SecurityContext sc;
-    public WorkingArea(Map<String, Object> document, byte[] bytes, Map<String, String> context, SecurityContext sc){
+    public WorkingArea(Doc document, byte[] bytes, Context context, SecurityContext sc){
         this.document = document;
         this.bytes = bytes;
         this.context = context;

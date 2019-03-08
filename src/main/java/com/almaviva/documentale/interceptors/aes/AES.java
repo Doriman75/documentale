@@ -6,15 +6,18 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.almaviva.documentale.engine.InternalServerError;
+import com.almaviva.documentale.InternalServerError;
+
+import org.springframework.beans.factory.annotation.Value;
 
 public abstract class AES
 {
+    @Value("${documentale.aes.secret:secret}") public String password;
+
     byte[] iv = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     IvParameterSpec ivSpec = new IvParameterSpec(iv);    
     private SecretKeySpec key()
     {
-        String password = "secret";
         while(password.length() < 16) password += password;
         password.substring(0, 16);
         return new SecretKeySpec(password.getBytes(Charset.forName("utf-8")), "AES");

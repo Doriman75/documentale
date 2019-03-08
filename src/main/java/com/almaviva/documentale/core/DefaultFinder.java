@@ -1,9 +1,9 @@
-package com.almaviva.documentale.interceptors.core;
+package com.almaviva.documentale.core;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.almaviva.documentale.engine.BadRequest;
+import com.almaviva.documentale.BadRequest;
 
 import org.springframework.stereotype.Component;
 

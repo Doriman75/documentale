@@ -1,11 +1,12 @@
 package com.almaviva.documentale.interceptors.events;
 
-import com.almaviva.documentale.interceptors.core.ContentDecoder;
-import com.almaviva.documentale.interceptors.core.ContentEncoder;
-import com.almaviva.documentale.interceptors.core.DocumentRemapper;
-import com.almaviva.documentale.interceptors.core.Finder;
-import com.almaviva.documentale.interceptors.core.CreateMetadataAdder;
-import com.almaviva.documentale.interceptors.core.WorkingArea;
+import com.almaviva.documentale.core.ContentDecoder;
+import com.almaviva.documentale.core.ContentEncoder;
+import com.almaviva.documentale.core.DocumentRemapper;
+import com.almaviva.documentale.core.Finder;
+import com.almaviva.documentale.core.UpdateMetadataAdder;
+import com.almaviva.documentale.core.CreateMetadataAdder;
+import com.almaviva.documentale.core.WorkingArea;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ public class EventInterceptor implements
     ContentDecoder, 
     ContentEncoder,
     CreateMetadataAdder,
+    UpdateMetadataAdder,
     DocumentRemapper,
     Finder
 {

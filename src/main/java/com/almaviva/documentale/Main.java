@@ -1,12 +1,10 @@
 package com.almaviva.documentale;
 
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
-import com.almaviva.documentale.interceptors.core.ContextBuilder;
-import com.almaviva.documentale.interceptors.core.SecurityContext;
-import com.almaviva.documentale.interceptors.core.SecurityContextBuilder;
+import com.almaviva.documentale.core.ContextBuilder;
+import com.almaviva.documentale.core.SecurityContext;
+import com.almaviva.documentale.core.SecurityContextBuilder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +24,7 @@ public class Main {
 	@Bean
 	public ContextBuilder contextBuilder() {
 		return (c,r) -> {
-			Map<String, String> result = new HashMap<>();
+			Context result = new Context();
 			result.putAll(c);
 			result.putAll(r);
 			return result;

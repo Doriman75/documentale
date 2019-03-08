@@ -1,6 +1,6 @@
 package com.almaviva.documentale.engine;
 
-import com.almaviva.documentale.interceptors.core.SecurityContext;
+import com.almaviva.documentale.core.SecurityContext;
 
 public interface ContentAdapter {
     public int create(String md5, byte[] bytes, SecurityContext sc);

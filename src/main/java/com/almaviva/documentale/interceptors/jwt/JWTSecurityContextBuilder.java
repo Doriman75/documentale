@@ -2,9 +2,9 @@ package com.almaviva.documentale.interceptors.jwt;
 
 import java.util.Map;
 
-import com.almaviva.documentale.engine.Unauthorized;
-import com.almaviva.documentale.interceptors.core.SecurityContext;
-import com.almaviva.documentale.interceptors.core.SecurityContextBuilder;
+import com.almaviva.documentale.Unauthorized;
+import com.almaviva.documentale.core.SecurityContext;
+import com.almaviva.documentale.core.SecurityContextBuilder;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
