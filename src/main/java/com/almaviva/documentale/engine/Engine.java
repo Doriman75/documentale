@@ -15,6 +15,7 @@ import com.almaviva.documentale.core.CreateMetadataAdder;
 import com.almaviva.documentale.core.Doc;
 import com.almaviva.documentale.core.DocumentRemapper;
 import com.almaviva.documentale.core.Finder;
+import com.almaviva.documentale.core.Page;
 import com.almaviva.documentale.core.SecurityContext;
 import com.almaviva.documentale.core.SecurityContextBuilder;
 import com.almaviva.documentale.core.UpdateMetadataAdder;
@@ -47,7 +48,7 @@ public class Engine {
                     .run(documentRemappers, "DOCUMENT_REMAP").document;
     }
 
-    public List<Doc> find(Context context) {
+    public Page find(Context context) {
         SecurityContext sc = scb.build(context);
 
         WorkingArea wa = new WorkingArea(null, null, context, sc)
@@ -57,12 +58,12 @@ public class Engine {
         LinkedHashMap<String, Integer> sort = toSort(wa.context.get("sort"));
         int limit = Integer.parseInt(wa.context.get("limit"));
         int offset = Integer.parseInt(wa.context.get("offset"));
-
-        return metaAdapter
-                .find(filter, sort, offset, limit, sc).stream()
+        Page result = metaAdapter.find(filter, sort, offset, limit, sc);
+        result.list = result.list.stream()
                 .map(d -> new WorkingArea(d, null, context, sc)
                 .run(documentRemappers, "DOCUMENT_REMAP").document)
                 .collect(Collectors.toList());
+        return result;
     }
 
 

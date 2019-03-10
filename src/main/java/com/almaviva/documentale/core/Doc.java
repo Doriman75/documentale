@@ -1,9 +1,9 @@
 package com.almaviva.documentale.core;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Doc extends HashMap<String, Object>
+public class Doc extends LinkedHashMap<String, Object>
 {
     private static final long serialVersionUID = 1L;
 

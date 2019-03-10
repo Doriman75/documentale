@@ -8,6 +8,7 @@ import com.almaviva.documentale.BadRequest;
 import com.almaviva.documentale.Context;
 import com.almaviva.documentale.core.ContextBuilder;
 import com.almaviva.documentale.core.Doc;
+import com.almaviva.documentale.core.Page;
 import com.almaviva.documentale.engine.Engine;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,7 @@ public class DocumentController {
         return engine.update(id, document, bytes, context(headers, request));
     }
 
+    @SuppressWarnings("unchecked")
     private String contentType(Doc document) {
         Map<String,String> info = (Map<String,String>) document.get("info");
         if (info == null) return "text/plain; charset=ISO-8859-1";
@@ -81,9 +83,17 @@ public class DocumentController {
     }
 
     @RequestMapping("")
-    public List<Doc> find(@RequestHeader Map<String,String> headers, 
+    public ResponseEntity<List<Doc>> find(@RequestHeader Map<String,String> headers, 
                             @RequestParam Map<String,String> request) {
-        return engine.find(context(headers, request));
+
+        Page p = engine.find(context(headers, request));
+
+        return ResponseEntity
+                .ok()
+                .header("offset", "" + p.offset)
+                .header("limit", "" + p.limit)
+                .header("count", "" + p.count)
+                .body(p.list);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
